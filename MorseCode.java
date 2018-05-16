@@ -37,10 +37,11 @@ public class MorseCode {
           palabra = entrada.nextLine();
           
           for (int i = 0; i < palabra.length(); i++) {
-            if( englishLetters.indexOf(palabra.toUpperCase().charAt(i)) == -1) {
+            position = englishLetters.indexOf(palabra.toUpperCase().charAt(i));
+            if( position == -1) {
               result += "letra-error" + " ";
             }else{
-              position = englishLetters.indexOf(palabra.toUpperCase().charAt(i));
+              // position = englishLetters.indexOf(palabra.toUpperCase().charAt(i));
               result += cMorse[position] + " ";
             }
           }
