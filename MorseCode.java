@@ -10,14 +10,14 @@ public class MorseCode {
     
     // String letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890";
     String englishLetters = " ETAOINSHRDLUCMFWGPYBVKJQXZ1234567890 ";
-    
+
     int position = 0;
     String result = "";
 
     System.out.println("Hola, Bienvenidos!");
     
     String option;
-    
+
     String palabra = "";
 
     do {
@@ -36,15 +36,19 @@ public class MorseCode {
           
           palabra = entrada.nextLine();
           
-          for (int f = 0; f < palabra.length(); f++) {
-            position = englishLetters.indexOf(palabra.toUpperCase().charAt(f));
-            result += cMorse[position] + " ";
+          for (int i = 0; i < palabra.length(); i++) {
+            if( englishLetters.indexOf(palabra.toUpperCase().charAt(i)) == -1) {
+              result += "letra-error" + " ";
+            }else{
+              position = englishLetters.indexOf(palabra.toUpperCase().charAt(i));
+              result += cMorse[position] + " ";
+            }
           }
           System.out.println("Su mensaje en morse: " + result);
           
           break;
           
-          case "2":
+        case "2":
           System.out.println("Recuerde separar cada letra con un espacio y cada palabra con el siguiente carácter: / ");
           System.out.print("Introduzca su mensaje: ");
 
@@ -57,7 +61,6 @@ public class MorseCode {
           for (String o : arrayItem) {
             for (int i = 0; i < cMorse.length; i++) {
               if (o.equals(cMorse[i])) {
-                // System.out.print( o + " = " + englishLetters.charAt(i) );
                 System.out.print(englishLetters.charAt(i));
                 break;
               }
@@ -67,14 +70,17 @@ public class MorseCode {
             }
           }
 
-          break;
+        break;
+
         case "3":
+          entrada.close();
           System.out.println("Gracias por visitarnos");
           System.exit(1);
-          break;
+        break;
+
         default:
           System.out.println("Por favor selecciona una opción valida :D");
-          break;
+        break;
       }
       
       System.out.println();
@@ -82,37 +88,5 @@ public class MorseCode {
       System.out.println();
 
     } while ( !option.equals("3") );
-
-
-    // // Morse code to text
-
-    // String[] arrayItem = {};
-
-    // arrayItem = palabra.split(" ");
-
-    // for (String o : arrayItem) {
-    //   for (int i = 0; i < cMorse.length; i++) {
-    //     if (o.equals(cMorse[i])) {
-    //       // System.out.print( o + " = " + englishLetters.charAt(i) );
-    //       System.out.print(englishLetters.charAt(i));
-    //       break;
-    //     }
-    //     if(i == (cMorse.length - 1)) {
-    //       System.out.print( " code-error " );
-    //     }
-    //   }
-    // }
-
-
-    // // Text to morse code
-
-    // for (int f = 0; f < palabra.length(); f++) {
-    // position = englishLetters.indexOf(palabra.toUpperCase().charAt(f));
-    // result += cMorse[position] + " ";
-    // }
-    // System.out.println( "Morse code: " + result );
-
-    entrada.close();
   }
-
 }
