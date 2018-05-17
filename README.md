@@ -12,3 +12,7 @@ angel.vasquez.unam@gmail.com
 4. Aparecerá el resultado, marcará errores en caso de existir y regresará automáticamente al menú.
 
 ## Capturas de pantalla
+
+![General](https://raw.githubusercontent.com/AngelVasquezNep/MorseCode/master/capturas/morseCode-1.png)
+
+![General](https://raw.githubusercontent.com/AngelVasquezNep/MorseCode/master/capturas/morseCode-manejo-errores.png)
