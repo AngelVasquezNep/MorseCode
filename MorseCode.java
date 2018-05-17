@@ -50,6 +50,7 @@ public class MorseCode {
         break;
 
         default:
+          System.out.println();
           System.out.println("Por favor selecciona una opción valida :D");
         break;
       }
