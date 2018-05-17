@@ -76,6 +76,7 @@ public class MorseCode {
         result += cMorse[position] + " ";
       }
     }
+    System.out.println();
     System.out.println("Su mensaje en morse: " + result);
   }
 
